@@ -1,0 +1,33 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.ehcache.org/v3"
+    xmlns:jsr107="http://www.ehcache.org/v3/jsr107"
+    xsi:schemaLocation="
+            http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd
+            http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
+ 
+    <cache alias="fpgrowth">
+        <key-type>java.lang.String</key-type>
+        <value-type>java.util.Map</value-type>
+        <expiry>
+            <ttl unit="seconds">10000000</ttl>
+        </expiry>
+ 
+        <resources>
+            <heap unit="entries">2</heap>
+            <offheap unit="MB">100</offheap>
+        </resources>
+    </cache>
+ 
+  <cache alias="collabrationfilter">
+        <key-type>java.lang.String</key-type>
+        <value-type>java.util.Map</value-type>
+        <expiry>
+            <ttl unit="seconds">10000000</ttl>
+        </expiry>
+ 
+        <resources>
+            <heap unit="entries">2</heap>
+            <offheap unit="MB">100</offheap>
+        </resources>
+    </cache>
+</config>
