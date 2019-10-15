@@ -1,6 +1,8 @@
 package com.codehack.controller;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -52,7 +54,8 @@ public class RecommendationController {
 		}*/
 		String fpPredictions = resultMap.get(sessionVisitedPages);
 		if(fpPredictions!=null) {
-			resultList.add(fpPredictions);
+			fpPredictions = fpPredictions.replaceAll(",$","");
+			resultList =Arrays.asList(fpPredictions.split(","));
 			System.out.println(">>>>>>predictions found>>>>"+fpPredictions);
 		}else {
 			System.out.println(">>>>>>predictions not found>>>>");
@@ -93,7 +96,7 @@ public class RecommendationController {
 		
 		String cfPredictions = resultMap.get(customerId);
 		if(cfPredictions!=null) {
-			resultList.add(cfPredictions);
+			resultList = Arrays.asList(cfPredictions.split(","));
 			System.out.println(">>>>>>predictions found>>>>"+cfPredictions);
 		}else {
 			System.out.println(">>>>>>predictions not found>>>>");

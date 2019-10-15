@@ -59,7 +59,7 @@ public class FpGrowthJobService {
         			String resultFp = resultMap.get(previouspages);
         			resultMap.put(previouspages,  resultFp.concat(predictions)+",");
         		}else {
-        			resultMap.put(previouspages, predictions);
+        			resultMap.put(previouspages, predictions+",");
         		}
         	  System.out.println(
         	    rule.javaAntecedent() + " => " + rule.javaConsequent() + ", " + rule.confidence());
